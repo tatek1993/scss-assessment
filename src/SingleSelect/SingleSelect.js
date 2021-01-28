@@ -5,7 +5,12 @@ const SingleSelect = props => {
 
     /*
 
-        This component is built for you. Just skin it with the scss file. 
+        This component is built for you. Just skin it with the scss file. See the example.png. 
+
+        Suggestions:
+            rollover states on buttons.
+            staging animations.
+            make feedback a modal window.
 
     */
 
