@@ -14,48 +14,37 @@ const SingleSelect = props => {
 
     */
 
-   
+    const handleSelect = clickedOption => {
+        if (clickedOption.correct) {
+            props.setModal({
+                header: props.data.feedback.correct.header,
+                body: props.data.feedback.correct.body,
+                correct: true
+            });
+        } else {
+            props.setModal({
+                header: props.data.feedback.incorrect.header,
+                body: props.data.feedback.incorrect.body,
+                correct: false
+            });
+        }
+    }
 
-    const selectedOption = props.data.options[selected]
+    // const selectedOption = props.data.options[selected]
 
     return (
         <div className={`SingleSelect`}>
             <h1 className={`question`}>
                 {props.data.questionText}
             </h1>
-            {
-                selected === -1 && (
-                    <ol type="A">{
-                        props.data.options.map((option, optionIndex) => {
-                        return <li onClick={()=>{handleSelect(optionIndex)}}>{option.text}</li>
-                        })    
-                    }</ol>
-                )
-                
-            }
-            {
-                selected > -1 &&
-                <div className={`feedback ${selectedOption.correct ? 'correct hvr-pulse-grow' : 'incorrect hvr-icon-buzz-out'}`}>
-                    <div className='answer'>
-                        <h1>
-                            {selectedOption.correct ?
-                                props.data.feedback.correct.header
-                            :
-                                props.data.feedback.incorrect.header
-                            }
-                        </h1>
-                        <p>
-                            {selectedOption.correct ?
-                                props.data.feedback.correct.body
-                            :
-                                props.data.feedback.incorrect.body
-                            }
-                        </p>
-                        <button className='fade' onClick={props.onComplete}>OK</button>
-
-                    </div>
-                </div>
-            }
+            <ol type="A">
+                {
+                    props.data.options.map((option) => {
+                    return <li onClick={()=>{handleSelect(option)}}>{option.text}</li>
+                    })    
+                }
+            </ol>
+            
         </div>
     )
 }
