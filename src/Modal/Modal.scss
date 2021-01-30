@@ -1,9 +1,7 @@
 @import '../global-styles.scss';
 
 .feedback{
-  // display: flex;
-  // justify-content: center;
-  display: none; /* Hidden by default */
+  
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -82,21 +80,42 @@
   }
     
 @keyframes hvr-pulse-grow {
-    to {
-        transform: scale(1.1);
-    }
+  0% {
+    transform:  scale(1, 1)  ;
+  }
+  15% {
+    transform:  scale(1.1, 1.1) ;
+  }
+  30% {
+    transform:  scale(1, 1) ;
+  }
+  45% {
+    transform:  scale(1.05, 1.05) ;
+  }
+  60% {
+    transform:  scale(1, 1) ;
+  }
+  75% {
+    transform:  scale(1.025, 1.025) ;
+  }
+  100% {
+    transform:  scale(1, 1) ;
+  }
+  
 }
+
 .hvr-pulse-grow {
     display: flex;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     animation-name: hvr-pulse-grow;
-    animation-duration: 0.3s;
+    animation-duration: 0.8s;
     animation-timing-function: linear;
-    animation-iteration-count: 6;
+    animation-iteration-count: 1;
     animation-direction: alternate;
-    animation-delay: 1.5s;
+
+    // animation-delay: 1.5s;
 }
 
 
@@ -158,7 +177,7 @@
     stroke-miterlimit:8;
     stroke-dasharray:400;
     stroke-opacity:1;
-    animation-duration: 1000ms;
+    animation-duration: 600ms;
     animation-timing-function: linear;
     animation-delay: .2s;
     animation-fill-mode: forwards;
@@ -170,8 +189,19 @@
   .dashpath.checkmark {
     stroke-dashoffset: 400; 
     animation-name: dashpath-to-zero;
-    animation-delay: 1s;
+    animation-delay: .6s;
   }
+  .dashpath.x1 {
+    stroke-dashoffset: 400; 
+    animation-name: dashpath-to-zero;
+    animation-delay: .6s;
+  }
+  .dashpath.x2 {
+    stroke-dashoffset: 400; 
+    animation-name: dashpath-to-zero;
+    animation-delay: .8s;
+  }
+
   @keyframes dashpath-to-zero {
     to {
       stroke-dashoffset: 0;

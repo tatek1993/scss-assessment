@@ -5,10 +5,12 @@ import Incorrect from '../Images/Incorrect.js';
 const Modal = props => {
 
     return (
-                <div className={`feedback ${props.data.correct ? 'correct hvr-pulse-grow' : 'incorrect hvr-icon-buzz-out'}`}>
-                    <div className='answer'>
+                <div className={'feedback'}>
+                    <div className={`answer ${props.data.correct ? 'correct hvr-pulse-grow' : 'incorrect hvr-icon-buzz-out'}`}>
                         <div className='answerHeader'>
-                            <Correct/>
+                            {
+                                props.data.correct ? <Correct/> : <Incorrect/>
+                            }
                         </div>
                         <h1>
                             {props.data.header}
