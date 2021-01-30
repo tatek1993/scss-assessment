@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import data from './activity.json'
 import MultiSelect from './MultiSelect/MultiSelect';
 import SingleSelect from './SingleSelect/SingleSelect';
+import Modal from './Modal/Modal';
 import './global-styles.scss';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         currentSegment.type === 'multi-select' && 
         <MultiSelect data={currentSegment} onComplete={handleSegmentComplete}/>
       }
+        <Modal />
     </div>
   );
 }
