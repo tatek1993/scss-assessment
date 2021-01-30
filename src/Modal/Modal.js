@@ -5,6 +5,9 @@ const Modal = props => {
     return (
                 <div className={`feedback ${props.data.correct ? 'correct hvr-pulse-grow' : 'incorrect hvr-icon-buzz-out'}`}>
                     <div className='answer'>
+                        <div className='answerHeader'>
+                            <img></img>
+                        </div>
                         <h1>
                             {props.data.header}
                         </h1>
