@@ -1,0 +1,81 @@
+// animations from Hover.css
+.fade {
+    display: flex;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    overflow: hidden;
+    transition-duration: 0.3s;
+    transition-property: color, background-color;
+  }
+  .fade:hover, .fade:focus, .fade:active {
+    background-color: $green-bg;
+    color: white;
+  }
+    
+@keyframes hvr-pulse-grow {
+    to {
+        transform: scale(1.1);
+    }
+}
+.hvr-pulse-grow {
+    display: flex;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    animation-name: hvr-pulse-grow;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+}
+
+
+@keyframes hvr-icon-buzz-out {
+    10% {
+      transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+      transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+      transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+      transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+      transform: translateX(1px) rotate(0);
+    }
+    100% {
+      transform: translateX(-1px) rotate(0);
+    }
+  }
+  .hvr-icon-buzz-out {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+  }
+  .hvr-icon-buzz-out .hvr-icon {
+    transform: translateZ(0);
+  }
+  .hvr-icon-buzz-out:hover .hvr-icon, .hvr-icon-buzz-out:focus .hvr-icon, .hvr-icon-buzz-out:active .hvr-icon {
+    animation-name: hvr-icon-buzz-out;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }

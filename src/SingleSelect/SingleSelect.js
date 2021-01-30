@@ -14,11 +14,7 @@ const SingleSelect = props => {
 
     */
 
-    const [selected, setSelected] = useState(-1);
-
-    const handleSelect = (i) => {
-        if(selected === -1) setSelected(i)
-    }
+   
 
     const selectedOption = props.data.options[selected]
 
@@ -39,7 +35,7 @@ const SingleSelect = props => {
             }
             {
                 selected > -1 &&
-                <div className={`feedback ${selectedOption.correct ? 'correct hvr-pulse-grow' : 'incorrect'}`}>
+                <div className={`feedback ${selectedOption.correct ? 'correct hvr-pulse-grow' : 'incorrect hvr-icon-buzz-out'}`}>
                     <div className='answer'>
                         <h1>
                             {selectedOption.correct ?
