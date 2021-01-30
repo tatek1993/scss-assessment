@@ -24,20 +24,21 @@
   margin: auto;
   padding: 2rem;
   padding-top: 0;
-  border: 1px solid #888;
+  border-radius: 10px;
   width: 50%;
+  font-family:sans-serif;
+  color:dimgrey;
 
   .answerHeader {
-        margin: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-        align-items: center;
-        word-wrap: none;
-        color: white;
-        background-color: $green-bg;
-        border-bottom: 3px solid $green-border;
-        padding: 2rem;
-        text-align: center;
+    width: 100%;
+    align-items: center;
+    word-wrap: none;
+    color: white;
+    background-color: $green-bg;
+    border-bottom: 3px solid $green-border;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
   }
 
   button{
@@ -52,6 +53,7 @@
       padding: 1rem 2rem;
       text-decoration: none;
       text-shadow: 0px 1px 0px #2f6627;
+      margin: .2rem;
 
       &:hover {
         background: linear-gradient(to bottom, $green-bg 5%, $green-bg 100%);
@@ -94,6 +96,7 @@
     animation-timing-function: linear;
     animation-iteration-count: 6;
     animation-direction: alternate;
+    animation-delay: 1.5s;
 }
 
 
@@ -144,4 +147,33 @@
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
+  }
+
+  .dashpath {
+    fill:none; 
+    stroke: $white-bg;
+    stroke-width:10;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:8;
+    stroke-dasharray:400;
+    stroke-opacity:1;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+  }
+  .dashpath.circle {
+    stroke-dashoffset: 500; 
+    animation-name: dashpath-to-zero;
+  }
+  .dashpath.checkmark {
+    stroke-dashoffset: 400; 
+    animation-name: dashpath-to-zero;
+    animation-delay: 1s;
+  }
+  @keyframes dashpath-to-zero {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
