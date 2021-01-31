@@ -11,40 +11,4 @@
     padding-bottom: 1rem;
     border-radius: 10px;
 
-    .question{
-        margin: 0;
-        margin-bottom: 1rem;
-        word-wrap: none;
-        color: white;
-        background-color: $green-bg;
-        border-bottom: 3px solid $green-border;
-        padding: 2rem;
-        text-align: center;
-        border-radius: 10px 10px 0 0;
-    }
-    ol {
-        display: flex;
-        flex-direction: column;
-        list-style-position: inside;
-        margin: 0;
-        padding-inline-start: 0px;
-        li {
-            text-align: left;
-            max-width: 100%;
-            border: none;
-            padding: .5rem;
-            padding-left: 2rem;
-            font-size: 1.2rem;
-            font-family: inherit;
-            &:hover {
-                max-width: 100%;
-                background-color:$white-border;
-                
-                
-            }
-        }   
-    }
-    
-    
-    
 }

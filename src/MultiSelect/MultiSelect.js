@@ -16,9 +16,40 @@ import './MultiSelect.scss'
 */
 
 const MultiSelect = props => {
+
+    const handleSelect = clickedOption => {
+        if (clickedOption.correct) {
+            props.setModal({
+                header: props.data.feedback.correct.header,
+                body: props.data.feedback.correct.body,
+                correct: true
+            });
+        } else {
+            props.setModal({
+                header: props.data.feedback.incorrect.header,
+                body: props.data.feedback.incorrect.body,
+                correct: false
+            });
+        }
+    }
+    // function myFunction() {
+    //     document.getElementById("MultiSelect").multiple = true;
+        
+    // }
+
     return (
-        <div className={`MultiSelect`}>
-            multi-select implementation goes here
+        <div className={`MultiSelect`} id={`MultiSelect`}>
+             <h1 className={`question`}>
+                {props.data.questionText}
+            </h1>
+            <ul className='list' type="none">
+                {
+                    props.data.options.map((option) => {
+                    return <li onClick={()=>{handleSelect(option)}}><input type="checkbox"/>{option.text}</li>
+                    })    
+                }
+            </ul>
+            <button className='fade' onClick={props.onComplete}>OK</button>
         </div>
     )
 }
