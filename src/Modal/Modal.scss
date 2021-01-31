@@ -26,50 +26,78 @@
   width: 50%;
   font-family:sans-serif;
   color:dimgrey;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  h1{
+    margin-bottom: .6rem;
+  }
+
+  &.correct {
+    .answerHeader{
+      background-color: $green-bg;
+      border-bottom: 3px solid $green-border;
+    }
+    button{
+      background: linear-gradient(to bottom, $green-border 5%, $green-bg 70%);
+      background-color: $green-bg;
+      border: 1px solid $green-border;
+      text-shadow: 0px 1px 0px #2f6627;
+      &:hover {
+        background: linear-gradient(to bottom, $green-bg 5%, $green-bg 100%);
+	      background-color: $green-bg;
+      }
+    }
+  }
+  &.incorrect {
+    .answerHeader{
+      background-color: $red-bg;
+      border-bottom: 3px solid $red-border;
+    }
+    button{
+      background: linear-gradient(to bottom, $red-border 5%, $red-bg 70%);
+      background-color: $red-bg;
+      border: 1px solid $red-border;
+      text-shadow: 0px 1px 0px #662927;
+      &:hover {
+        background: linear-gradient(to bottom, $red-bg 5%, $red-bg 100%);
+	      background-color: $red-bg;
+      }
+    }
+  }
 
   .answerHeader {
     width: 100%;
     align-items: center;
     word-wrap: none;
     color: white;
-    background-color: $green-bg;
-    border-bottom: 3px solid $green-border;
     padding: 2rem;
     text-align: center;
     border-radius: 10px 10px 0 0;
+    
+    
   }
 
   button{
-      background: linear-gradient(to bottom, $green-border 5%, $green-bg 70%);
-      background-color: $green-bg;
       border-radius: 2rem;
-      border: 1px solid $green-border;
       cursor: pointer;
       color: #ffffff;
       font-family: Arial;
-      font-size: 1rem;
-      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: .1rem;
+      padding: .6rem 2rem;
       text-decoration: none;
-      text-shadow: 0px 1px 0px #2f6627;
-      margin: .2rem;
-
-      &:hover {
-        background: linear-gradient(to bottom, $green-bg 5%, $green-bg 100%);
-	      background-color: $green-bg;
-      }
+      margin-top: .7rem;
       &:active{
         position:relative;
 	      top:1px;
       }
   }
+  
 }
 
 // animations from Hover.css
 .fade {
-    display: flex;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     overflow: hidden;
     transition-duration: 0.3s;
     transition-property: color, background-color;
@@ -105,17 +133,12 @@
 }
 
 .hvr-pulse-grow {
-    display: flex;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     animation-name: hvr-pulse-grow;
     animation-duration: 0.8s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-direction: alternate;
-
-    // animation-delay: 1.5s;
 }
 
 
@@ -152,11 +175,12 @@
     }
   }
   .hvr-icon-buzz-out {
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    transition-duration: 0.3s;
+    
+    animation-duration: 0.8s;
+    animation-name: hvr-icon-buzz-out;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
   }
   .hvr-icon-buzz-out .hvr-icon {
     transform: translateZ(0);

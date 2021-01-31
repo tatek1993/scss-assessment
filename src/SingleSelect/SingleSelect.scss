@@ -1,9 +1,5 @@
 @import '../global-styles.scss';
-// color variables
-    // $green-bg: rgb(126, 166, 37);
-    // $green-border: rgb(165, 202, 71);
-    // $white-bg: rgb(239, 240, 235);
-    // $white-border: rgb(195, 196, 190);
+
 //scss stub for singleselect
 .SingleSelect {
     background-color: $white-bg;
@@ -13,6 +9,7 @@
     transform: translate(-50%, -50%) !important;
     font-family: monospace;
     padding-bottom: 1rem;
+    border-radius: 10px;
 
     .question{
         margin: 0;
@@ -23,6 +20,7 @@
         border-bottom: 3px solid $green-border;
         padding: 2rem;
         text-align: center;
+        border-radius: 10px 10px 0 0;
     }
     ol {
         display: flex;
@@ -47,37 +45,6 @@
         }   
     }
     
-    // animations from Hover.css
-    .fade {
-        display: flex;
-        vertical-align: middle;
-        transform: perspective(1px) translateZ(0);
-        // box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        overflow: hidden;
-        transition-duration: 0.3s;
-        transition-property: color, background-color;
-      }
-      .fade:hover, .fade:focus, .fade:active {
-        background-color: $green-bg;
-        color: white;
-      }
-        
-    @keyframes hvr-pulse-grow {
-        to {
-            transform: scale(1.1);
-        }
-    }
-    .hvr-pulse-grow {
-        display: flex;
-        vertical-align: middle;
-        transform: perspective(1px) translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        animation-name: hvr-pulse-grow;
-        animation-duration: 0.3s;
-        animation-timing-function: linear;
-        animation-iteration-count: 6;
-        animation-direction: alternate;
-    }
     
     
 }

@@ -3,3 +3,11 @@ $green-bg: rgb(126, 166, 37);
 $green-border: rgb(165, 202, 71);
 $white-bg: rgb(239, 240, 235);
 $white-border: rgb(195, 196, 190);
+$red-bg: rgb(202, 96, 96);
+$red-border: rgb(241, 126, 126);
+
+.App{
+    background-size: cover;
+    background-image: url('./Images/you-x-ventures-Oalh2MojUuk-unsplash.jpg');
+    height: 100%;
+}
