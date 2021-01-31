@@ -6,8 +6,16 @@ $white-border: rgb(195, 196, 190);
 $red-bg: rgb(202, 96, 96);
 $red-border: rgb(241, 126, 126);
 
-.App{
+body{
+    margin: 0;
     background-size: cover;
     background-image: url('./Images/you-x-ventures-Oalh2MojUuk-unsplash.jpg');
-    height: 100%;
+    height: 100vh;
+}
+
+.App{
+    background-size: cover;
+    background-image: url('./Images/vignette.png');
+    height: 100vh;
+    
 }
