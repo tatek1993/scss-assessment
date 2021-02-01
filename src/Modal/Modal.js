@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './Modal.scss'
 import Correct from '../Images/Correct.js';
 import Incorrect from '../Images/Incorrect.js';

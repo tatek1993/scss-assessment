@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './SingleSelect.scss'
 
 const SingleSelect = props => {
@@ -40,7 +40,7 @@ const SingleSelect = props => {
             <ol className='list' type="A">
                 {
                     props.data.options.map((option) => {
-                    return <li onClick={()=>{handleSelect(option)}}>{option.text}</li>
+                    return <li key={option.text} onClick={()=>{handleSelect(option)}}>{option.text}</li>
                     })    
                 }
             </ol>
