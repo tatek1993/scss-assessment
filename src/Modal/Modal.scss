@@ -1,4 +1,4 @@
-@import '../global-styles.scss';
+@import '../Variables.scss';
 
 .feedback{
   
@@ -23,7 +23,7 @@
   padding: 2rem;
   padding-top: 0;
   border-radius: 10px;
-  width: 25%;
+  width: 40%;
   font-family:sans-serif;
   color:dimgrey;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -36,16 +36,6 @@
     .answerHeader{
       background-color: $green-bg;
       border-bottom: 3px solid $green-border;
-    }
-    button{
-      background: linear-gradient(to bottom, $green-border 5%, $green-bg 70%);
-      background-color: $green-bg;
-      border: 1px solid $green-border;
-      text-shadow: 0px 1px 0px #2f6627;
-      &:hover {
-        background: linear-gradient(to bottom, $green-bg 5%, $green-bg 100%);
-	      background-color: $green-bg;
-      }
     }
   }
   &.incorrect {
@@ -78,34 +68,13 @@
   }
 
   button{
-      border-radius: 2rem;
-      cursor: pointer;
-      color: #ffffff;
-      font-family: Arial;
       font-size: 1.1rem;
-      font-weight: bold;
-      letter-spacing: .1rem;
       padding: .6rem 2rem;
-      text-decoration: none;
-      margin-top: .7rem;
-      &:active{
-        position:relative;
-	      top:1px;
-      }
   }
   
 }
 
 // animations from Hover.css
-.fade {
-    overflow: hidden;
-    transition-duration: 0.3s;
-    transition-property: color, background-color;
-  }
-  .fade:hover, .fade:focus, .fade:active {
-    background-color: $green-bg;
-    color: white;
-  }
     
 @keyframes hvr-pulse-grow {
   0% {

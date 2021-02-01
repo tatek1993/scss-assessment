@@ -33,11 +33,11 @@ const SingleSelect = props => {
     // const selectedOption = props.data.options[selected]
 
     return (
-        <div className={`SingleSelect`}>
-            <h1 className={`question`}>
+        <div className='SingleSelect Select'>
+            <h1 className='Question'>
                 {props.data.questionText}
             </h1>
-            <ol className='list' type="A">
+            <ol className='List' type="A">
                 {
                     props.data.options.map((option) => {
                     return <li key={option.text} onClick={()=>{handleSelect(option)}}>{option.text}</li>

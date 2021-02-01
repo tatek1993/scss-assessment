@@ -18,7 +18,7 @@ const Modal = props => {
                         <p>
                             {props.data.body}
                         </p>
-                        <button className='fade' onClick={props.onComplete}>OK</button>
+                        <button onClick={props.onComplete}>OK</button>
                     </div>
                 </div>
     )

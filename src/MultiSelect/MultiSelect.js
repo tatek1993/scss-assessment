@@ -40,18 +40,18 @@ const MultiSelect = props => {
     }
     console.log(checked);
     return (
-        <div className={`MultiSelect`} id={`MultiSelect`}>
-             <h1 className={`question`}>
+        <div className='MultiSelect Select' id='MultiSelect'>
+             <h1 className='Question'>
                 {props.data.questionText}
             </h1>
-            <ul className='list' type="none">
+            <ul className='List' type="none">
                 {
                     props.data.options.map((option, i) => {
                     return <li key={option.text}><input id={`multiselect_${i}`} type="checkbox" onClick={() =>setCheckbox(i)}/><label htmlFor={`multiselect_${i}`}>{option.text}</label></li>
                     })    
                 }
             </ul>
-            <div className="button-container">
+            <div className="ButtonContainer">
                 <button onClick={()=>handleSubmit(checked)}>Submit</button>
             </div>
         </div>
