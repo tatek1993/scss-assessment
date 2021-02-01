@@ -18,20 +18,37 @@ import './MultiSelect.scss'
 const MultiSelect = props => {
 
     const handleSubmit = submission => {
+        const tableHeaders = [
+            'Your Answer',
+            'Correct Answer',
+            'Choice'
+        ];
+        const tableCells = props.data.options.map((option, i)=> [
+            {
+                value: submission[i],
+                color: Boolean(option.correct) === submission[i] ? 'cyan' : 'red',
+            },
+            {
+                value: Boolean(option.correct),
+                color: 'white',
+            },
+            {
+                value: option.text,
+                color: 'white',
+            }
+        ]);
 
-        if (submission.filter((answer, i) => Boolean(props.data.options[i].correct) !== answer).length === 0) {
-            props.setModal({
-                header: props.data.feedback.correct.header,
-                body: props.data.feedback.correct.body,
-                correct: true
-            });
-        } else {
-            props.setModal({
-                header: props.data.feedback.incorrect.header,
-                body: props.data.feedback.incorrect.body,
-                correct: false
-            });
-        }
+        const correct = submission.filter((answer, i) => Boolean(props.data.options[i].correct) !== answer).length === 0;
+
+        let feedback = correct ?  props.data.feedback.correct :  props.data.feedback.incorrect
+
+        props.setModal({
+            header: feedback.header,
+            body: feedback.body,
+            tableHeaders: tableHeaders,
+            tableCells: tableCells,
+            correct: correct
+        });
     }
     const [checked, setChecked] = useState(props.data.options.map(x => false));
 

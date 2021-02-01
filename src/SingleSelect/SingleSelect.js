@@ -14,23 +14,37 @@ const SingleSelect = props => {
 
     */
 
-    const handleSelect = clickedOption => {
-        if (clickedOption.correct) {
-            props.setModal({
-                header: props.data.feedback.correct.header,
-                body: props.data.feedback.correct.body,
-                correct: true
-            });
-        } else {
-            props.setModal({
-                header: props.data.feedback.incorrect.header,
-                body: props.data.feedback.incorrect.body,
-                correct: false
-            });
-        }
+   
+   
+   const handleSelect = clickedOption => {
+        const tableHeaders = [
+             'Your Answer',
+             'Correct Answer',
+             
+         ];
+         const tableCells = [[
+             {
+                 value: clickedOption.text,
+                 color: clickedOption.correct ? 'cyan' : 'red',
+             },
+             {
+                 value: props.data.options.filter(option => option.correct)[0].text,
+                 color: 'white' 
+             }
+         ]];
+     
+         let feedback = clickedOption.correct ?  props.data.feedback.correct :  props.data.feedback.incorrect
+     
+         props.setModal({
+             header: feedback.header,
+             body: feedback.body,
+             tableHeaders: tableHeaders,
+             tableCells: tableCells,
+             correct: clickedOption.correct
+         });
+        
     }
 
-    // const selectedOption = props.data.options[selected]
 
     return (
         <div className='SingleSelect Select'>
