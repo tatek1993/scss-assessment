@@ -18,6 +18,7 @@ function App() {
   const [segmentIndex, setSegmentIndex] = useState(0);
   const currentSegment = data.segments[segmentIndex];
 
+  const [done, setDone] = useState(false);
   const [modal, setModal] = useState(null);
 
   const handleSegmentComplete = () => {
@@ -25,6 +26,7 @@ function App() {
       if(data.segments.length > segmentIndex + 1){
         setSegmentIndex(segmentIndex + 1)
       }else{
+        setDone(true);
         alert('all done')
       }
   }
@@ -32,11 +34,11 @@ function App() {
   return (
     <div className="App">
       {
-        currentSegment.type === 'single-select' && 
+        !done && currentSegment.type === 'single-select' && 
         <SingleSelect data={currentSegment} setModal={setModal}/>
       }
       {
-        currentSegment.type === 'multi-select' && 
+        !done && currentSegment.type === 'multi-select' && 
         <MultiSelect data={currentSegment} setModal={setModal}/>
       }
       {
