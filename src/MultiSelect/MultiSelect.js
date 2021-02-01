@@ -1,4 +1,4 @@
-import React, {} from 'react'
+import React, {useState} from 'react'
 import './MultiSelect.scss'
 
 // this is a stub for you to develop the following
@@ -17,8 +17,9 @@ import './MultiSelect.scss'
 
 const MultiSelect = props => {
 
-    const handleSelect = clickedOption => {
-        if (clickedOption.correct) {
+    const handleSubmit = submission => {
+
+        if (submission.filter((answer, i) => Boolean(props.data.options[i].correct) !== answer).length == 0) {
             props.setModal({
                 header: props.data.feedback.correct.header,
                 body: props.data.feedback.correct.body,
@@ -32,11 +33,12 @@ const MultiSelect = props => {
             });
         }
     }
-    // function myFunction() {
-    //     document.getElementById("MultiSelect").multiple = true;
-        
-    // }
+    const [checked, setChecked] = useState(props.data.options.map(x => false));
 
+    const setCheckbox = (i) => {
+        setChecked(checked.map((item, j) => i == j ? !item : item))
+    }
+    console.log(checked);
     return (
         <div className={`MultiSelect`} id={`MultiSelect`}>
              <h1 className={`question`}>
@@ -44,12 +46,14 @@ const MultiSelect = props => {
             </h1>
             <ul className='list' type="none">
                 {
-                    props.data.options.map((option) => {
-                    return <li onClick={()=>{handleSelect(option)}}><input type="checkbox"/>{option.text}</li>
+                    props.data.options.map((option, i) => {
+                    return <li><input id={`multiselect_${i}`} type="checkbox" onClick={() =>setCheckbox(i)}/><label for={`multiselect_${i}`}>{option.text}</label></li>
                     })    
                 }
             </ul>
-            <button className='fade' onClick={props.onComplete}>OK</button>
+            <div className="button-container">
+                <button onClick={()=>handleSubmit(checked)}>Submit</button>
+            </div>
         </div>
     )
 }

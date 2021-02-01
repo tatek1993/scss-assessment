@@ -19,12 +19,6 @@ function App() {
   const currentSegment = data.segments[segmentIndex];
 
   const [modal, setModal] = useState(null);
-  console.log(modal);
-
-  // const setSelect = (i) => {
-  //     if(selected === -1) setModal(i)
-  // }
-  
 
   const handleSegmentComplete = () => {
       setModal(null)
